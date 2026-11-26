@@ -9,3 +9,4 @@ Static site for captaindad.games (Vercel, deploys from `main`). No build step: e
 - Star hunt: stars are ONLY used for the hunt (hidden stars, counter, Star hunt panel, Star Hunter badge); use other shapes for decoration (3D gems, ticks, icons). 5 `.hidden-star` buttons site-wide (ids in `site.js` STARS). Progress is saved in localStorage key `captainDadGames_v1` only.
 - The contact email is assembled in `site.js` on click; never put the address in the HTML.
 - Test changes in a headless browser at phone (390), tablet (820) and desktop (1280+) widths before pushing.
+- Caching: assets revalidate on every visit (vercel.json), and every `/assets/...` link carries `?v=N`. When you change an image, script or stylesheet, bump N everywhere (HTML and JS) so browsers that cached the old copy get the new one.

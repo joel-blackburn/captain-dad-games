@@ -223,7 +223,7 @@
 
   Promise.all([
     document.fonts && document.fonts.load ? Promise.all([document.fonts.load('800 60px "Baloo 2"'), document.fonts.load('800 60px Nunito')]).catch(function () {}) : Promise.resolve(),
-    loadImg('/assets/img/ss_icon.jpg'), loadImg('/assets/img/grim_box.jpg')
+    loadImg('/assets/img/ss_icon.jpg?v=2'), loadImg('/assets/img/grim_box.jpg?v=2')
   ]).then(function (res) {
     var imgs = { ss: res[1], grim: res[2] };
     GAMES.forEach(function (g, i) {
