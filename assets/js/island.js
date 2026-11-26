@@ -122,13 +122,7 @@
     var c = document.createElement('canvas'); c.width = c.height = 1024; var x = c.getContext('2d');
     if (kind === 'ss') { if (img) x.drawImage(img, 0, 0, 1024, 1024); else { x.fillStyle = '#ff4f8b'; x.fillRect(0, 0, 1024, 1024); } }
     else if (kind === 'grim') {
-      if (img) x.drawImage(img, 0, 0, 1024, 1024); else { x.fillStyle = '#7d93d6'; x.fillRect(0, 0, 1024, 1024); }
-      var g = x.createLinearGradient(0, 0, 0, 330); g.addColorStop(0, 'rgba(11,29,58,.92)'); g.addColorStop(1, 'rgba(11,29,58,0)'); x.fillStyle = g; x.fillRect(0, 0, 1024, 330);
-      x.textAlign = 'center'; x.lineJoin = 'round';
-      x.font = '800 86px "Baloo 2", Nunito, sans-serif'; x.lineWidth = 18; x.strokeStyle = '#0b1d3a'; x.strokeText('THE CURSE OF', 512, 120); x.fillStyle = '#fff3e0'; x.fillText('THE CURSE OF', 512, 120);
-      x.font = '800 108px "Baloo 2", Nunito, sans-serif'; x.lineWidth = 20; x.strokeText('CAPTAIN GRIMTIDE', 512, 245); x.fillStyle = '#ff4f8b'; x.fillText('CAPTAIN GRIMTIDE', 512, 245);
-      x.save(); x.translate(512, 900); x.rotate(-.06); x.fillStyle = '#ffc90a'; x.fillRect(-330, -62, 660, 112); x.strokeStyle = '#0b2a5b'; x.lineWidth = 10; x.strokeRect(-330, -62, 660, 112);
-      x.fillStyle = '#0b2a5b'; x.font = '800 74px Nunito, sans-serif'; x.fillText('COMING SOON', 0, 22); x.restore();
+      if (img) x.drawImage(img, 0, 0, 1024, 1024); else { x.fillStyle = '#5c43ac'; x.fillRect(0, 0, 1024, 1024); }
     } else {
       var pal = kind === 'm1' ? ['#8a5cf6', '#5b3fd1'] : ['#19c3b1', '#0f8f86'];
       var rg = x.createRadialGradient(512, 450, 100, 512, 512, 700); rg.addColorStop(0, pal[0]); rg.addColorStop(1, pal[1]); x.fillStyle = rg; x.fillRect(0, 0, 1024, 1024);
