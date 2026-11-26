@@ -148,7 +148,7 @@
   var GAMES = [
     { kind: 'ss', side: '#ff4f8b', href: '/sum-shredders/', label: 'Sum Shredders' },
     { kind: 'grim', side: '#123d4a', soon: 'The Curse of Captain Grimtide is coming soon!' },
-    { kind: 'm1', side: '#5b3fd1', soon: 'A secret game! Find all 5 hidden stars for a clue.', href: '/secrets/' },
+    { kind: 'm1', side: '#5b3fd1', soon: 'A secret game! Find all 5 hidden gold coins for a clue.', href: '/secrets/' },
     { kind: 'm2', side: '#0f8f86', soon: 'Another secret game is being built in Captain Dad’s workshop.' }
   ];
 
@@ -223,7 +223,7 @@
 
   Promise.all([
     document.fonts && document.fonts.load ? Promise.all([document.fonts.load('800 60px "Baloo 2"'), document.fonts.load('800 60px Nunito')]).catch(function () {}) : Promise.resolve(),
-    loadImg('/assets/img/ss_icon.jpg?v=2'), loadImg('/assets/img/grim_box.jpg?v=2')
+    loadImg('/assets/img/ss_icon.jpg?v=3'), loadImg('/assets/img/grim_box.jpg?v=3')
   ]).then(function (res) {
     var imgs = { ss: res[1], grim: res[2] };
     GAMES.forEach(function (g, i) {

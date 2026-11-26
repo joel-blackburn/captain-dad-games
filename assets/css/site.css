@@ -29,9 +29,9 @@ p{margin:0}
 .nav a{color:var(--cream);text-decoration:none;font-weight:800;font-size:17px;padding:10px 14px;border-radius:12px;min-height:44px;display:inline-flex;align-items:center;gap:6px}
 .nav a:hover{background:#0f2f63;color:var(--gold)}
 .nav a[aria-current="page"]{background:#0f2f63;color:var(--gold)}
-.star-chip{background:#0f2f63;border:2px solid var(--gold);color:var(--gold)!important}
-.star-chip svg{flex:0 0 auto}
-.star-chip [data-star-count]{background:var(--gold);color:var(--navy);border-radius:999px;padding:1px 8px;font-size:15px}
+.coin-chip{background:#0f2f63;border:2px solid var(--gold);color:var(--gold)!important}
+.coin-chip svg{flex:0 0 auto;color:var(--gold)}
+.coin-chip [data-star-count]{background:var(--gold);color:var(--navy);border-radius:999px;padding:1px 8px;font-size:15px}
 .menu-btn{display:none;width:48px;height:48px;border-radius:14px;border:3px solid var(--gold);background:transparent;color:var(--gold);align-items:center;justify-content:center;cursor:pointer}
 @media (max-width:900px){
   .logo-link img{width:256px;height:64px}
@@ -93,12 +93,12 @@ p{margin:0}
 .badge-new{position:absolute;top:14px;right:14px;background:var(--red);color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;padding:5px 10px;border-radius:999px}
 .plank{height:30px;margin-top:28px;background:var(--wood);border:3px solid var(--navy);border-radius:12px;box-shadow:0 8px 0 var(--navy)}
 
-/* ---------- star hunt ---------- */
-.hidden-star{position:absolute;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;z-index:5;animation:twinkle 2.6s ease-in-out infinite}
-.hidden-star img{width:100%;height:100%;object-fit:contain;transform:rotate(-12deg)}
-.hidden-star.found{display:none}
+/* ---------- coin hunt ---------- */
+.hidden-coin{position:absolute;width:46px;height:46px;padding:0;border:0;background:transparent;cursor:pointer;z-index:5;animation:twinkle 2.6s ease-in-out infinite}
+.hidden-coin img{width:100%;height:100%;object-fit:contain;transform:rotate(-8deg)}
+.hidden-coin.found{display:none}
 @keyframes twinkle{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-.star-pop{position:fixed;z-index:60;pointer-events:none;width:64px;height:64px;animation:pop .9s ease-out forwards}
+.coin-pop{position:fixed;z-index:60;pointer-events:none;width:64px;height:64px;animation:pop .9s ease-out forwards}
 @keyframes pop{0%{transform:scale(.6);opacity:1}100%{transform:translateY(-80px) scale(1.6);opacity:0}}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:var(--cream);border:3px solid var(--gold);font-weight:800;font-size:18px;padding:12px 20px;border-radius:18px;z-index:70;opacity:0;transition:opacity .25s,transform .25s;max-width:calc(100vw - 32px);text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -196,4 +196,16 @@ details p{margin-top:10px;font-size:16px;line-height:1.55}
 .foot-links a{color:var(--cream)}
 .foot-links a:hover{color:var(--gold)}
 .site-footer small{width:100%;font-size:14px;opacity:.85}
-@media (max-width:879px){.hero .hidden-star{top:auto!important;bottom:16px;right:16px!important}}
+@media (max-width:879px){.hero .hidden-coin{top:auto!important;bottom:16px;right:16px!important}}
+
+/* coin hunt help: the ? tooltip */
+.with-tip{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tip{position:relative;display:inline-flex}
+.tip-btn{width:32px;height:32px;border-radius:50%;border:3px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--display);font-weight:800;font-size:19px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;position:relative}
+.tip-btn::after{content:"";position:absolute;inset:-7px}
+.tip-btn:hover,.tip.open .tip-btn{background:var(--gold);color:var(--navy)}
+.tip-box{position:absolute;z-index:30;left:50%;bottom:calc(100% + 12px);transform:translateX(calc(-50% + var(--dx,0px)));width:min(300px,calc(100vw - 40px));background:var(--cream);color:var(--navy);border:3px solid var(--navy);border-radius:16px;box-shadow:0 6px 0 var(--navy);padding:12px 14px;font-family:var(--body);font-size:15px;font-weight:600;line-height:1.45;text-align:left;letter-spacing:0;text-transform:none;display:none}
+.tip-box::after{content:"";position:absolute;left:calc(50% - var(--dx,0px));top:100%;transform:translateX(-50%);border:9px solid transparent;border-top-color:var(--navy)}
+.tip.open .tip-box{display:block}
+@media (hover:hover){.tip:hover .tip-box{display:block}}
+.hunt-row{display:flex;align-items:flex-end;justify-content:center;gap:12px;flex-wrap:wrap}
