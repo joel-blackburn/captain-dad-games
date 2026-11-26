@@ -31,6 +31,7 @@ p{margin:0}
 .nav a[aria-current="page"]{background:#0f2f63;color:var(--gold)}
 .star-chip{background:#0f2f63;border:2px solid var(--gold);color:var(--gold)!important}
 .star-chip svg{flex:0 0 auto}
+.star-chip [data-star-count]{background:var(--gold);color:var(--navy);border-radius:999px;padding:1px 8px;font-size:15px}
 .menu-btn{display:none;width:48px;height:48px;border-radius:14px;border:3px solid var(--gold);background:transparent;color:var(--gold);align-items:center;justify-content:center;cursor:pointer}
 @media (max-width:900px){
   .logo-link img{width:256px;height:64px}
@@ -105,11 +106,13 @@ p{margin:0}
 .hunt img{width:104px;height:auto}
 .hunt h2{color:var(--gold);font-size:36px}
 .hunt .txt{flex:1 1 320px}
-.pips{display:flex;gap:8px;align-items:center}
-.pips svg{width:34px;height:34px}
-.pips .on{color:var(--gold)}
-.pips .off{color:#6f86b3}
-.pips .count{margin-left:8px;font-family:var(--display);font-weight:800;font-size:28px;color:var(--gold)}
+.pips{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.pips-label{width:100%;font-weight:800;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#c9d5ec}
+.pips-track{display:flex;gap:6px;background:#06142e;border:3px solid #4d6799;border-radius:16px;padding:5px}
+.pips .slot{width:34px;height:30px;border-radius:9px;background:#1b3a6e;display:inline-flex;align-items:center;justify-content:center;color:var(--navy)}
+.pips .slot.on{background:var(--gold)}
+.pips .slot svg{width:20px;height:20px}
+.pips .count{font-family:var(--display);font-weight:800;font-size:26px;color:var(--gold);white-space:nowrap}
 .hunt a{color:var(--gold)}
 
 /* ---------- misc sections ---------- */

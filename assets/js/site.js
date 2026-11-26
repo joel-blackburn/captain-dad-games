@@ -54,11 +54,11 @@
     var n = starCount();
     $$('[data-star-count]').forEach(function (el) { el.textContent = n + '/5'; });
     $$('.pips').forEach(function (p) {
-      var html = '';
-      for (var i = 1; i <= 5; i++) html += '<span class="' + (i <= n ? 'on' : 'off') + '">' + STAR_SVG + '</span>';
-      html += '<span class="count">' + n + '/5</span>';
+      var html = '<span class="pips-label">Stars found</span><span class="pips-track">';
+      for (var i = 1; i <= 5; i++) html += '<span class="slot' + (i <= n ? ' on' : '') + '">' + (i <= n ? STAR_SVG : '') + '</span>';
+      html += '</span><span class="count">' + n + ' of 5</span>';
       p.innerHTML = html;
-      p.setAttribute('aria-label', n + ' of 5 stars found');
+      p.setAttribute('aria-label', 'Star hunt: ' + n + ' of 5 hidden stars found');
     });
     $$('[data-when-done]').forEach(function (el) { el.hidden = n < 5; });
     $$('[data-when-not-done]').forEach(function (el) { el.hidden = n >= 5; });
