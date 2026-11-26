@@ -85,6 +85,10 @@
     if (type === '=') { var e1 = bar(2, .5), e2 = bar(2, .5); e1.position.y = .42 * s; e2.position.y = -.42 * s; g.add(e1, e2); }
     g.position.set(x, y, z); g.rotation.set(rot[0], rot[1], rot[2]); g.userData.base = y; g.userData.ph = rnd() * 6; scene.add(g); spinners.push(g); return g;
   }
+  function gem(x, y, z, s, color) {
+    var m = mesh(new T.OctahedronGeometry(s, 0), M(color, { roughness: .3, metalness: .1 })); m.scale.y = 1.35;
+    m.position.set(x, y, z); m.userData.base = y; m.userData.ph = rnd() * 6; m.userData.star = true; scene.add(m); spinners.push(m); return m;
+  }
   function star(x, y, z, s) {
     var sh = new T.Shape();
     for (var i = 0; i < 10; i++) { var r = i % 2 ? .45 : 1, a = i / 10 * Math.PI * 2 + Math.PI / 2, px = Math.cos(a) * r * s, py = Math.sin(a) * r * s; if (i) sh.lineTo(px, py); else sh.moveTo(px, py); }
@@ -235,7 +239,7 @@
       b.userData.game = g; island.add(b); boxes.push(b);
     });
     sym('+', C.gold, -4, 7.5, -6, 1, [.2, .4, .3]); sym('x', C.red, 20, 8.5, -8, 1, [.3, -.5, .2]); sym('=', C.purple, 12, 9.2, -6, .85, [.1, .2, -.2]); sym('/', C.orange, 1, 0, -2, .8, [.2, -.6, .1]);
-    star(-2.5, 4.5, -1, .9); star(17.5, 5.5, -2, .6);
+    gem(-2.5, 4.5, -1, .9, C.sky); gem(17.5, 5.5, -2, .7, '#ff4f8b');
     layout();
     hero.classList.add('live');
     var still = stage.querySelector('picture'); if (still) still.style.display = 'none';
